@@ -1,0 +1,263 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #f5f5dc;
+    overflow: hidden;
+}
+
+.container {
+    width: min(100% - 30px, 1180px);
+    margin-inline: auto;
+}
+
+.flexbox {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.homepage {
+    display: block;
+}
+
+header {
+    height: 17vh;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+    width: 20%;
+}
+
+h1 span {
+    background-color: #006D5D;
+    color: #fff;
+    padding: 4.5px;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    gap: 2em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+nav li {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav li:hover {
+    background-color: #006D5D;
+    color: #fff;
+    border-radius: 1em;
+}
+
+.profile-img {
+    height: 3em;
+    width: 3em;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.log-out-btn {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: #006D5D;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-div {
+    display: grid;
+    place-items: center;
+    width: 40%;
+    height: 100%;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 3.5px solid #006D5D;
+    height: 2.5em;
+    width: 23em;
+}
+
+.loupe {
+    width: 2.5em;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.search-div input {
+    font-family: "Nunito Sans", sans-serif;
+    width: 100%;
+    margin-left: 0.2em;
+}
+
+/*----------------------------------*/
+/*--------------LOG-IN--------------*/
+/*----------------------------------*/
+
+.login-page {
+    display: none;
+    flex-direction: row;
+    height: 100%;
+}
+
+.initial-img-login {
+    height: 100%;
+    width: 55%;
+}
+
+.initial-img-login img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f5f5dc;
+    width: 45%;
+    position: relative;
+}
+
+.welcome-text { 
+    position: absolute;
+    top: 10%;
+    left: 19%;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-text p {
+    font-size: 2em;
+    width: 13em;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2em;
+}
+
+.login-form p span {
+    color: #006D5D;
+    font-weight: 800;
+    font-size: 1.27em;
+}
+
+.login-form p:nth-child(2) {
+    margin-top: 1.5em;
+    font-size: 1em;
+    width: 21em;
+    line-height: 1.8;
+}
+
+form {
+    position: absolute;
+    top: 28%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    height: 30%;
+}
+
+.form-input {
+    display: flex;
+    align-items: center;
+    border: 3.5px solid #006D5D;
+    height: 2.5em;
+    width: 23em;
+    background-color: #fff;
+}
+
+.form-input input {
+    width: 100%;
+    height: 100%;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.user, .key {
+    width: 2.5em;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+label {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+label:nth-child(3) {
+    margin-top: 1.7em;
+}
+
+.form-input:nth-child(3) {
+    margin-top: 6em;
+}
+
+.login-btn {
+    position: absolute;
+    top: 70%;
+    left: 38%;
+    width: 8em;
+    height: 3.5em;
+    border-radius: 1em;
+    background-color: #006D5D;
+    color: #fff;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.login-advice {
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    bottom: 15%;
+    left: 21%;
+    font-size: 1em;
+    color: #ff0000;
+    display: none;
+}
+
+.login-advice i {
+    margin-right: 1em;
+}
