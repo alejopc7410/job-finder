@@ -1,6 +1,6 @@
 'use strict'
 
-import { select, selectAll, onEvent } from "./utility.js"
+import { select, onEvent } from "./utility.js"
 
 const usernameInput = select('#username')
 const passwordInput = select('#password')
@@ -47,4 +47,3 @@ function logOut() {
 onEvent('click', loginBtn, checkcredentials)
 onEvent('click', logOutBtn, logOut)
 onEvent('load', window, checkLoggedIn)
-

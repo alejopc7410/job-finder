@@ -11,6 +11,10 @@ const companies = [
     'Apple','Google','Microsoft','Amazon','Facebook',
     'Tesla','IBM','Samsung', 'Oracle','Intel'
 ];
+let friendArray = [];
+let friendImageArray = [];
+let newFriendName;
+let newFriendImage;
 
 const url = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
 const options = {
@@ -34,43 +38,49 @@ async function fetchData() {
 
 fetchData().then((resultsArray) => {
     for (let i = 0; i <= 9; i++) {
-    let newFriend = document.createElement('li')
-    let friendImageDiv = document.createElement('div')
-    let friendInfo = document.createElement('div')
-    let friendImage = document.createElement('img')
-    let friendName = document.createElement('h3')
-    let friendJob = document.createElement('p')
-    let friendCompany = document.createElement('p')
-    let followBtn = document.createElement('button')
-    let icon = document.createElement('i')
-    followBtn.className = 'follow-friend-btn'
-    icon.className = 'fa-solid fa-plus'
-    friendImageDiv.className = 'friend-img'
-    friendInfo.className = 'friend-info-list'
-    friendCompany.className = 'friend-company'
-    friendJob.className = 'friend-job'
-    
-    newFriendList.appendChild(newFriend)
-    newFriend.appendChild(friendImageDiv)
-    newFriend.appendChild(friendInfo)
-    friendImageDiv.appendChild(friendImage)
-    friendInfo.appendChild(friendName)
-    friendInfo.appendChild(friendJob)
-    friendInfo.appendChild(friendCompany)
-    friendInfo.appendChild(followBtn)
-    followBtn.appendChild(icon)
+        let newFriend = document.createElement('li')
+        let friendImageDiv = document.createElement('div')
+        let friendInfo = document.createElement('div')
+        let friendImage = document.createElement('img')
+        let friendName = document.createElement('h3')
+        let friendJob = document.createElement('p')
+        let friendCompany = document.createElement('p')
+        let followBtn = document.createElement('button')
+        let icon = document.createElement('i')
+        followBtn.className = 'follow-friend-btn'
+        icon.className = 'fa-solid fa-plus'
+        friendImageDiv.className = 'friend-img'
+        friendInfo.className = 'friend-info-list'
+        friendCompany.className = 'friend-company'
+        friendJob.className = 'friend-job'
+        
+        newFriendList.appendChild(newFriend)
+        newFriend.appendChild(friendImageDiv)
+        newFriend.appendChild(friendInfo)
+        friendImageDiv.appendChild(friendImage)
+        friendInfo.appendChild(friendName)
+        friendInfo.appendChild(friendJob)
+        friendInfo.appendChild(friendCompany)
+        friendInfo.appendChild(followBtn)
+        followBtn.appendChild(icon)
 
-    friendImage.src = resultsArray[i].picture.medium
-    friendName.textContent = resultsArray[i].name.first + " " + resultsArray[i].name.last
-    friendJob.textContent = jobTitles[i]
-    friendCompany.textContent = companies[i]
+        newFriendImage = resultsArray[i].picture.medium
+        friendImage.src = newFriendImage
+        newFriendName = resultsArray[i].name.first + " " + resultsArray[i].name.last
+        friendName.textContent = newFriendName
+        friendJob.textContent = jobTitles[i]
+        friendCompany.textContent = companies[i]
+        friendImageArray.push(newFriendImage)
+        friendArray.push(newFriendName)
 
-    onEvent('click', followBtn, () => {
-        if (icon.className === 'fa-solid fa-plus') {
-            icon.className = 'fa-solid fa-check'
-        } else {
-            icon.className = 'fa-solid fa-plus'
-        }
-    })
+        onEvent('click', followBtn, () => {
+            if (icon.className === 'fa-solid fa-plus') {
+                icon.className = 'fa-solid fa-check'
+            } else {
+                icon.className = 'fa-solid fa-plus'
+            }
+        })
     }
 });
+
+export { friendImageArray, friendArray }

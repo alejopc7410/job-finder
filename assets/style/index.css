@@ -316,11 +316,25 @@ textarea {
 
 .new-friends-section {
     width: 30%;
+    height: 24.5em;
+    overflow: scroll;
+    background-color: #fff;
+}
+
+.title-friend-section {
+    padding: 1em;
+}
+
+.title-friend-section h2 {
+    font-family: "Poppins", sans-serif;
+}
+
+.title-friend-section p {
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .friends-info {
-    height: 24em;
-    overflow: scroll;
+    padding-top: 0.5em;
 }
 
 .friends-info ul {
